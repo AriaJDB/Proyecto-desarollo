@@ -1,24 +1,30 @@
+// 1. Datos de los dinosaurios (Se combinaron los links de Ramiro con los emojis de Development)
 const dinosaurios = [
-    { nombre: "Tyrannosaurus Rex", dieta: "Carnívoro", periodo: "Cretácico", link: null },
-    { nombre: "Triceratops", dieta: "Herbívoro", periodo: "Cretácico", link: null },
-    { nombre: "Brachiosaurus", dieta: "Herbívoro", periodo: "Jurásico", link: "brachiosaurus.html" },
-    { nombre: "Velociraptor", dieta: "Carnívoro", periodo: "Cretácico", link: null }
+    { nombre: "Tyrannosaurus Rex", dieta: "Carnívoro", periodo: "Cretácico", emoji: "🦖", link: null },
+    { nombre: "Triceratops", dieta: "Herbívoro", periodo: "Cretácico", emoji: "🦕", link: "triceratops.html" },
+    { nombre: "Brachiosaurus", dieta: "Herbívoro", periodo: "Jurásico", emoji: "🦕", link: "brachiosaurus.html" },
+    { nombre: "Velociraptor", dieta: "Carnívoro", periodo: "Cretácico", emoji: "🦖", link: null }
 ];
 
+// 2. Renderizar tarjetas dinámicamente
 const grid = document.getElementById('dino-grid');
 
 function cargarDinos() {
     dinosaurios.forEach(dino => {
         const card = document.createElement('div');
-        card.className = 'card';
+        card.className = 'card' + (dino.link ? ' card--link' : '');
+        
+        // Se mantiene la estructura visual de development pero con el estilo de cursor que agregó Ramiro
         card.innerHTML = `
+            <div class="card-emoji">${dino.emoji}</div>
             <h3>${dino.nombre}</h3>
             <p><strong>Dieta:</strong> ${dino.dieta}</p>
             <p><strong>Periodo:</strong> ${dino.periodo}</p>
-            ${dino.link ? '<p class="ver-mas">🦕 Ver más →</p>' : ''}
+            ${dino.link ? `<a class="card-btn" href="${dino.link}">Ver más →</a>` : '<span class="card-soon">Próximamente</span>'}
         `;
+
         if (dino.link) {
-            card.style.cursor = 'pointer';
+            card.style.cursor = 'pointer'; // Mejora de UX de Ramiro
             card.addEventListener('click', () => {
                 window.location.href = dino.link;
             });
@@ -27,11 +33,13 @@ function cargarDinos() {
     });
 }
 
+// 3. Efecto del Header al hacer Scroll
 window.addEventListener('scroll', function() {
     const header = document.getElementById('main-header');
     header.classList.toggle('sticky', window.scrollY > 0);
 });
 
+// Inicializar
 document.addEventListener('DOMContentLoaded', cargarDinos);
 
 function explorar() {
