@@ -1,0 +1,100 @@
+:root {
+    --primary: #2c5d63;
+    --dark: #121212;
+    --light: #f4f4f4;
+    --accent: #a8dadc;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark);
+    color: var(--light);
+    line-height: 1.6;
+}
+
+/* Header Dinámico */
+header {
+    position: fixed;
+    top: 0; width: 100%;
+    padding: 20px 50px;
+    transition: 0.4s;
+    z-index: 1000;
+}
+
+header.sticky {
+    background: rgba(18, 18, 18, 0.95);
+    padding: 10px 50px;
+    border-bottom: 1px solid var(--primary);
+}
+
+nav { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: bold; }
+.logo span { color: var(--primary); }
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 20px; }
+nav ul li a { color: white; text-decoration: none; }
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('../assets/img/hero-dino.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-h1 { font-size: 4rem; margin-bottom: 10px; }
+
+/* Grid Dinámico */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 50px;
+}
+
+.card {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.card:hover { transform: translateY(-10px); border: 1px solid var(--primary); }
+
+.hero {
+    height: 100vh;
+    /* La ruta correcta es ../assets/img/dino.jpg */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('../assets/img/dino.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+/* Card con link */
+.card--link { cursor: pointer; position: relative; }
+.card-emoji { font-size: 2.5rem; margin-bottom: 10px; }
+.card-btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 6px 16px;
+    background: var(--primary);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+}
+.card-btn:hover { background: var(--accent); color: var(--dark); }
+.card-soon {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 0.78rem;
+    color: #555;
+    font-style: italic;
+}
