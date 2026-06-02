@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brachiosaurus | DinoWorld</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #1a120b;
+            color: #e8d5b0;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #2d1e0f;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #4a7c59;
+        }
+
+        header .logo { font-size: 1.5rem; font-weight: bold; color: #a8d5a2; }
+        header .logo span { color: #f0c060; }
+
+        .hero-dino {
+            background: linear-gradient(135deg, #2d1e0f 0%, #1a3a2a 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #4a7c59;
+        }
+
+        .hero-dino .emoji { font-size: 5rem; margin-bottom: 1rem; display: block; }
+
+        .hero-dino h1 {
+            font-size: 3rem;
+            color: #a8d5a2;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-dino p {
+            color: #b8a080;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-card {
+            background: #2d1e0f;
+            border: 1px solid #4a7c59;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .info-card .label {
+            font-size: 0.8rem;
+            color: #7aaa88;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card .valor {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #f0c060;
+        }
+
+        .seccion {
+            background: #2d1e0f;
+            border: 1px solid #4a7c59;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .seccion h2 {
+            color: #a8d5a2;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #4a7c59;
+            padding-bottom: 0.5rem;
+        }
+
+        .seccion p {
+            line-height: 1.8;
+            color: #c8b890;
+        }
+
+        .datos-curiosos li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #3a2a1a;
+            color: #c8b890;
+            list-style: none;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .datos-curiosos li::before {
+            content: "🌿";
+            position: absolute;
+            left: 0;
+        }
+
+        .btn-volver {
+            display: inline-block;
+            margin: 2rem 0;
+            padding: 0.8rem 2rem;
+            background: #4a7c59;
+            color: #e8d5b0;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-volver:hover { background: #5a9c69; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Dino<span>World</span></div>
+        <a href="index.html" style="color: #a8d5a2; text-decoration: none;">← Volver</a>
+    </header>
+
+    <div class="hero-dino">
+        <img src="https://www.thoughtco.com/thmb/GIEDp80BQzKLa_vjCdZeVYaMxuI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-680791823-59af09edaad52b0010486221.jpg" 
+             alt="Brachiosaurus" 
+             style="width: 100%; max-width: 600px; border-radius: 12px; border: 2px solid #4a7c59; margin-bottom: 1.5rem;">
+        <h1>Brachiosaurus</h1>
+        <p>Uno de los dinosaurios más grandes que jamás habitaron la Tierra</p>
+    </div>
+
+    <div class="container">
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="label">Dieta</div>
+                <div class="valor">Herbívoro</div>
+            </div>
+            <div class="info-card">
+                <div class="label">Periodo</div>
+                <div class="valor">Jurásico</div>
+            </div>
+            <div class="info-card">
+                <div class="label">Altura</div>
+                <div class="valor">~13 metros</div>
+            </div>
+            <div class="info-card">
+                <div class="label">Peso</div>
+                <div class="valor">30-60 ton</div>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <h2>Descripción</h2>
+            <p>
+                El Brachiosaurus fue un dinosaurio saurópodo que vivió durante el período Jurásico,
+                hace aproximadamente 154 a 153 millones de años. Su nombre significa "lagarto con brazos"
+                debido a que sus patas delanteras eran más largas que las traseras, lo que le daba
+                una postura inclinada hacia adelante única entre los saurópodos.
+            </p>
+        </div>
+
+        <div class="seccion">
+            <h2>Datos curiosos</h2>
+            <ul class="datos-curiosos">
+                <li>Su largo cuello le permitía alcanzar copas de árboles de hasta 9 metros de altura.</li>
+                <li>A diferencia de otros saurópodos, sus patas delanteras eran más largas que las traseras.</li>
+                <li>Se cree que consumía entre 200 y 400 kg de vegetación al día.</li>
+                <li>Sus fosas nasales estaban ubicadas en la parte alta de su cráneo.</li>
+                <li>Fue descubierto en 1900 por el paleontólogo Elmer Riggs en Colorado, EE.UU.</li>
+            </ul>
+        </div>
+
+        <a href="index.html" class="btn-volver">← Volver al inicio</a>
+
+    </div>
+
+</body>
+</html>

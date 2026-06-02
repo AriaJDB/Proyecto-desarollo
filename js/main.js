@@ -1,8 +1,8 @@
-// 1. Datos de los dinosaurios
+// 1. Datos de los dinosaurios (Se combinaron los links de Ramiro con los emojis de Development)
 const dinosaurios = [
     { nombre: "Tyrannosaurus Rex", dieta: "Carnívoro", periodo: "Cretácico", emoji: "🦖", link: null },
     { nombre: "Triceratops", dieta: "Herbívoro", periodo: "Cretácico", emoji: "🦕", link: "triceratops.html" },
-    { nombre: "Brachiosaurus", dieta: "Herbívoro", periodo: "Jurásico", emoji: "🦕", link: null },
+    { nombre: "Brachiosaurus", dieta: "Herbívoro", periodo: "Jurásico", emoji: "🦕", link: "brachiosaurus.html" },
     { nombre: "Velociraptor", dieta: "Carnívoro", periodo: "Cretácico", emoji: "🦖", link: null }
 ];
 
@@ -13,6 +13,8 @@ function cargarDinos() {
     dinosaurios.forEach(dino => {
         const card = document.createElement('div');
         card.className = 'card' + (dino.link ? ' card--link' : '');
+        
+        // Se mantiene la estructura visual de development pero con el estilo de cursor que agregó Ramiro
         card.innerHTML = `
             <div class="card-emoji">${dino.emoji}</div>
             <h3>${dino.nombre}</h3>
@@ -20,8 +22,12 @@ function cargarDinos() {
             <p><strong>Periodo:</strong> ${dino.periodo}</p>
             ${dino.link ? `<a class="card-btn" href="${dino.link}">Ver más →</a>` : '<span class="card-soon">Próximamente</span>'}
         `;
+
         if (dino.link) {
-            card.addEventListener('click', () => window.location.href = dino.link);
+            card.style.cursor = 'pointer'; // Mejora de UX de Ramiro
+            card.addEventListener('click', () => {
+                window.location.href = dino.link;
+            });
         }
         grid.appendChild(card);
     });
