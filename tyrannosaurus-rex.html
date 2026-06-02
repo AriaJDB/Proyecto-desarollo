@@ -110,7 +110,118 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
-        /* Footer temporal para Paso 1 */
+        /* Stats bar */
+        .stats-bar {
+            background: #0f0b0b;
+            border-top: 1px solid #241a1a;
+            border-bottom: 1px solid #241a1a;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 0 8vw;
+        }
+
+        .stat {
+            padding: 32px 20px;
+            border-right: 1px solid #1c1414;
+            animation: fadeUp 0.7s both;
+        }
+        .stat:last-child { border-right: none; }
+        .stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--accent);
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #776a6a;
+            margin-top: 6px;
+        }
+
+        /* Content sections */
+        .content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 8vw;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--amber);
+            margin-bottom: 32px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #3d2a2a;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+            align-items: start;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.85;
+            color: #d8cdcd;
+            margin-bottom: 16px;
+        }
+
+        /* Diet badge */
+        .badge {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: rgba(184, 59, 38, 0.2);
+            border: 1px solid var(--primary);
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 32px;
+            border-left: 2px solid #3d2a2a;
+            margin-top: 20px;
+        }
+
+        .timeline-item {
+            margin-bottom: 36px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -39px; top: 6px;
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 2px solid var(--accent);
+        }
+
+        .timeline-item h4 {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--amber);
+            margin-bottom: 6px;
+        }
+
+        .timeline-item p {
+            font-size: 0.9rem;
+            margin: 0;
+            color: #b5a8a8;
+        }
+
         footer {
             text-align: center;
             padding: 40px;
@@ -121,6 +232,8 @@
         footer a { color: var(--primary); text-decoration: none; }
 
         @media (max-width: 768px) {
+            .two-col { grid-template-columns: 1fr; }
+            .stats-bar { grid-template-columns: 1fr 1fr; }
             .dino-illustration { width: 280px; opacity: 0.35; }
             .hero { align-items: center; }
         }
@@ -143,6 +256,63 @@
             <p class="hero-sub">El "rey de los lagartos tiranos". Con una fuerza de mordida devastadora y sentidos hiperdesarrollados, gobernó el final de la era de los dinosaurios.</p>
         </div>
     </section>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+        <div class="stat">
+            <div class="stat-value">12.3 m</div>
+            <div class="stat-label">Longitud Max</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">8.4 t</div>
+            <div class="stat-label">Peso Estimado</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">66 Ma</div>
+            <div class="stat-label">Antigüedad</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">57,000 N</div>
+            <div class="stat-label">Fuerza Mordida</div>
+        </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <!-- About -->
+        <div class="two-col">
+            <div>
+                <h2 class="section-title">¿Quién era?</h2>
+                <span class="badge">🥩 Carnívoro Apex</span>
+                <p>El <em>Tyrannosaurus rex</em> es indudablemente el dinosaurio más icónico y temido de todos los tiempos. Su nombre significa literalmente "Rey de los Lagartos Tiranos", un título que ostenta con total justificación científica.</p>
+                <p>Habitó los valles de ríos y bosques del oeste de Norteamérica a finales del período Cretácico. Con una altura de cadera de casi 4 metros, fue uno de los carnívoros terrestres más grandes que jamás haya existido, dominando su ecosistema sin rivales.</p>
+                <p>A diferencia de los mitos del cine, poseía una visión binocular excelente comparable a la de un águila moderna, combinada con un sentido del olfato superlativo que le permitía detectar presas o carroña a kilómetros de distancia.</p>
+            </div>
+            <div>
+                <h2 class="section-title">Descubrimiento</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>1874 — Primeros Indicios</h4>
+                        <p>Arthur Lakes descubrió dientes fosilizados en Colorado que más tarde serían identificados como pertenecientes a un Tyrannosaurus.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>1902 — Primer Esqueleto Parcial</h4>
+                        <p>El célebre buscador de fósiles Barnum Brown desenterró el primer espécimen parcial de T-Rex en Hell Creek, Montana.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>1905 — Nombre Oficial</h4>
+                        <p>Henry Fairfield Osborn describió y nombró científicamente a la especie, catapultando al T-Rex a la fama mundial.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>1990 — El hallazgo de Sue</h4>
+                        <p>Susan Hendrickson descubrió en Dakota del Sur a "Sue", el esqueleto de tiranosaurio más grande, completo (90%) y mejor preservado de la historia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
     <footer>
         <p>DinoWorld · Exploración Prehistórica &nbsp;|&nbsp; <a href="index.html">← Volver al inicio</a></p>
