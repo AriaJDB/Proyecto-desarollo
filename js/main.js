@@ -1,6 +1,6 @@
 // 1. Datos de los dinosaurios (Se combinaron los links de Ramiro con los emojis de Development)
 const dinosaurios = [
-    { nombre: "Tyrannosaurus Rex", dieta: "Carnívoro", periodo: "Cretácico", emoji: "🦖", link: null },
+    { nombre: "Tyrannosaurus Rex", dieta: "Carnívoro", periodo: "Cretácico", emoji: "🦖", link: "tyrannosaurus-rex.html" },
     { nombre: "Triceratops", dieta: "Herbívoro", periodo: "Cretácico", emoji: "🦕", link: "triceratops.html" },
     { nombre: "Brachiosaurus", dieta: "Herbívoro", periodo: "Jurásico", emoji: "🦕", link: "brachiosaurus.html" },
     { nombre: "Velociraptor", dieta: "Carnívoro", periodo: "Cretácico", emoji: "🦖", link: null }
